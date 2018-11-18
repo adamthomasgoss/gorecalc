@@ -345,7 +345,33 @@
         });
         </script>
   
-  
+  	<div>
+    	<table style="width:100%; text-align:center;">
+        	<tr>
+            	<th>Height of gore (meters)</th>
+            	<th>Width at gore height (meters)</th>
+            </tr>
+        <?php					
+            $count=0;
+            $max = $_SESSION['lateralDivisions'];
+			$height = $_SESSION['domeDiameter']*3.141592653589793238462643383279502884197/4;
+            $currentSection = 0;
+            while($count<=$max)
+            {
+              $angle = ($count/$max*90*3.141592653589793238462643383279502884197/180);
+              $angleDeg = ($count/$max*90);
+              $radiusAtX = cos($angle)*$_SESSION['domeDiameter']/2;
+              $widthAtX = 3.141592653589793238462643383279502884167*$radiusAtX*2/$_SESSION['numSections'];
+			  echo "<tr>";
+              // echo "<td>angle = ".$angleDeg."</td>";
+              echo "<td>".round(($height*$count/$max),4)."</td>";
+              echo "<td>".round(($radiusAtX*2*3.141592653589793238462643383279502884197/$_SESSION['numSections']),4)."</td>";
+			  echo "</tr>";
+              $count++;
+            }
+          ?>
+         </table>
+  	  </div>
   </div>
   <div id="footer"><strong>©</strong>2014 adaMagination</div>
 </div>
