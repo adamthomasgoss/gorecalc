@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DIY Planetarium | GORE CALCULATOR</title>
+    <link href="../../diy_styles.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+	<link rel="stylesheet" type="text/css" href="../css/smoothness/jquery-ui-1.8.17.custom.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+
+	<script type="text/javascript" src="../js/jquery/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/javascript" src="../../jspdf.js"></script>
+	<script type="text/javascript" src="../../libs/FileSaver.js/FileSaver.js"></script>
+	<script type="text/javascript" src="../../libs/BlobBuilder.js/BlobBuilder.js"></script>
+
+	<script type="text/javascript" src="../../jspdf.plugin.addimage.js"></script>
+
+	<script type="text/javascript" src="../../jspdf.plugin.standard_fonts_metrics.js"></script>
+	<script type="text/javascript" src="../../jspdf.plugin.split_text_to_size.js"></script>
+	<script type="text/javascript" src="../../jspdf.plugin.from_html.js"></script>
+	<script type="text/javascript" src="../js/basic.js"></script>
+	
+	<script>
+		$(function() {
+			$("#accordion-basic, #accordion-text, #accordion-graphic").accordion({
+				autoHeight: false,
+				navigation: true
+			});
+			$( "#tabs" ).tabs();
+			$(".button").button();
+		});
+	</script>
+</head>
+
+<body>
+<div id="wrapper">
+	<div id="nav">
+      <div id="nav1"><a href="../../index.html">home</a></div>
+      <div id="nav2"><a href="../../productions">productions</a></div>
+      <div id="nav3"><a href="../../domes">domes</a></div>
+      <div id="nav4"><a href="../../photos">photos</a></div>
+      <div id="nav5current"><a href="./">software</a></div>
+      <div id="nav6"><a href="../../contact">contact</a></div>
+	</div>
+  <div id="header"><a href="../../index.html"><img src="../../images/header.png" width="900" height="300" /></a></div>
+  <div id="mainWrapper">
+  <div id="mainWrapperTopSpacer"></div>
+  <h1>GORE CALCULATOR</h1><hr>
+  <p>Coming Today</p>
+  <p>&nbsp;</p>
+  
+  
+  
+  		<iframe frameborder="0" width="500" height="400"></iframe>
+		<script>
+        $(document).ready(function() {
+        
+            var pdf = new jsPDF()
+            , sizes = [12, 16, 20]
+            , fonts = [['Times','Roman'],['Helvetica',''], ['Times','Italic']]
+            , font, size, lines
+            , margin = 0.5 // inches on a 8.5 x 11 inch sheet.
+            , verticalOffset = margin
+            , loremipsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus id eros turpis. Vivamus tempor urna vitae sapien mollis molestie. Vestibulum in lectus non enim bibendum laoreet at at libero. Etiam malesuada erat sed sem blandit in varius orci porttitor. Sed at sapien urna. Fusce augue ipsum, molestie et adipiscing at, varius quis enim. Morbi sed magna est, vel vestibulum urna. Sed tempor ipsum vel mi pretium at elementum urna tempor. Nulla faucibus consectetur felis, elementum venenatis mi mollis gravida. Aliquam mi ante, accumsan eu tempus vitae, viverra quis justo.\n\nProin feugiat augue in augue rhoncus eu cursus tellus laoreet. Pellentesque eu sapien at diam porttitor venenatis nec vitae velit. Donec ultrices volutpat lectus eget vehicula. Nam eu erat mi, in pulvinar eros. Mauris viverra porta orci, et vehicula lectus sagittis id. Nullam at magna vitae nunc fringilla posuere. Duis volutpat malesuada ornare. Nulla in eros metus. Vivamus a posuere libero.'
+        
+            pdf.ellipse(40, 20, 10, 5);
+        
+            pdf.setFillColor(0,0,255);
+            pdf.ellipse(80, 20, 10, 5, 'F');
+            
+            pdf.setLineWidth(1);
+            pdf.setDrawColor(0);
+            pdf.setFillColor(255,0,0);
+            pdf.circle(120, 20, 5, 'FD');
+        
+            var string = pdf.output('datauristring');
+        
+            $('iframe').attr('src', string);
+        });
+        </script>
+  
+  
+  </div>
+  <div id="footer"><strong>©</strong>2014 adaMagination</div>
+</div>
+
+</body>
+</html>
